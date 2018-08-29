@@ -8,6 +8,7 @@ branches:
 
 before_install:
   - pip install -r requirements.txt
+  - pip install --upgrade https://github.com/ozgur/python-linkedin/tarball/master
 
 script:
   - python test.py
