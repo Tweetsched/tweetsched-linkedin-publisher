@@ -22,4 +22,5 @@ The service requires that next environmental variables should be setted:
  
 ## How to run locally:
  - `pip install -r requirements.txt`
+ - `pip install --upgrade https://github.com/ozgur/python-linkedin/tarball/master`
  - `python app.py`
