@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @auth.get_password
 def get_password(username):
-    if username == os.environ['SERVICE_KEY']:
+    if username is os.environ['SERVICE_KEY']:
         return os.environ['SERVICE_PASS']
     return None
 
@@ -21,7 +21,7 @@ def unauthorized():
 
 @app.route('/api/v1/posts', methods = ['POST'])
 @auth.login_required
-def publish_tweet():
+def publish_post():
     if not request.json or not 'profileId' or not 'message' in request.json:
         logging.info('Not valid request')
         abort(400)
@@ -44,5 +44,5 @@ def publish_tweet():
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
-if __name__ == '__main__':
+if __name__ is '__main__':
     app.run(debug = False)
